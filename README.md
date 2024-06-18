@@ -42,6 +42,7 @@ Key Technologies
 
 Core Functionalities
 
+    Audio Player Embedding: Integrates an audio player into survey questions, allowing automatically Audios to be played through a validation process.
     Question Type Validation: Checks if the question type supports audio embedding, activating the plugin for compatible types.
     Question and Audio File Verification: Validates the question name and associated audio file, ensuring that only relevant audio is embedded.
     Subfolder Name Verification: Ensures the subfolder names for storing audio files are correct, facilitating organized audio file management.
