@@ -14,6 +14,7 @@
 - [Using `info.php` to Determine Paths](#using-infophp-to-determine-paths)
 - [SQL Commands to Create Required Tables](#sql-commands-to-create-required-tables)
 - [JSON Information Upload in Survey Response](#json-information-upload-in-survey-response)
+- [Audio File Organization for PLAY Plugin](#audio-file-organization-for-play-plugin)
 - [Error Handling Using the Help Attribute](#error-handling-using-the-help-attribute)
   - [Invalid Code Format](#invalid-code-format)
   - [Unrecognized Subfolder Name](#unrecognized-subfolder-name)
@@ -351,6 +352,11 @@ The PLAY plugin uses a Round Robin approach to cycle through audio file subfolde
 Imagine a survey with 7 questions where each requires an audio player. You should organize subfolders named `00`, `01`, `02`, etc., with audio files named sequentially (e.g., `00.mp3`, `01.mp3`, up to `07.mp3`). Each audio file should correspond to a question, facilitated by the specific code system which will be detailed in the sections discussing validation and error handling. 
 
 This setup ensures that every survey session can pull audio files from a systematically managed queue within LimeSurvey.
+
+
+
+
+
 
 
 
