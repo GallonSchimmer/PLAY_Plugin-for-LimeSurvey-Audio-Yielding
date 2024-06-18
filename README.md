@@ -1,5 +1,32 @@
 # PLAY_Plugin-for-LimeSurvey-Audio-Yielding
 
+
+```markdown
+# Index of README for PLAY Plugin for LimeSurvey
+
+- [Introduction](#introduction)
+- [Key Technologies](#key-technologies)
+- [Core Functionalities](#core-functionalities)
+- [Prototype Notice](#prototype-notice)
+- [Configuration of the PLAY Plugin for LimeSurvey](#configuration-of-the-play-plugin-for-limesurvey)
+  - [Database Connection and Paths](#database-connection-and-paths)
+  - [Configuration in `config.php` for Logging and Debugging](#configuration-in-configphp-for-logging-and-debugging)
+- [Using `info.php` to Determine Paths](#using-infophp-to-determine-paths)
+- [Creating Database Tables for PLAY Plugin](#creating-database-tables-for-play-plugin)
+- [Organizing Audio Files for Round Robin Distribution](#organizing-audio-files-for-round-robin-distribution)
+- [Survey Structure and Question Validation](#survey-structure-and-question-validation)
+- [Error Handling Using the Help Attribute](#error-handling-using-the-help-attribute)
+  - [Invalid Code Format](#invalid-code-format)
+  - [Unrecognized Subfolder Name](#unrecognized-subfolder-name)
+  - [Unrecognized Question Type](#unrecognized-question-type)
+  - [Incorrectly Named Audio File](#incorrectly-named-audio-file)
+- [Practical Application for Survey Administrators](#practical-application-for-survey-administrators)
+```
+
+
+
+
+
 Introduction
 
 The PLAY plugin for LimeSurvey enhances the audio capabilities within surveys by integrating advanced audio management and playback functionalities. This plugin is designed to seamlessly embed an audio player into a survey question. As a prototype, PLAY uses methods for handling audio files, ensuring a dynamic experience.
