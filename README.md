@@ -529,6 +529,11 @@ The PLAY plugin for LimeSurvey incorporates a robust error handling system that 
 - **Resolution:** Check that audio files within the subfolder are named following the sequence outlined in the question code. Correct any discrepancies between the audio file names and the AudioNumberValue.
 
 
+
+![error-handling](https://github.com/GallonSchimmer/PLAY_Plugin-for-LimeSurvey-Audio-Yielding/assets/26065891/9a872e46-1ce3-4da6-8b22-b0527e68cfaa)
+
+
+
 # Practical Application for Survey Administrators
 
 - **Pre-Launch Testing:** Utilize these error messages during the survey testing phase to identify and rectify configuration errors. Ensuring all components are correctly set up before distribution minimizes participant confusion and data collection issues.
