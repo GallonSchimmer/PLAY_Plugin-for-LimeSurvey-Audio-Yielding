@@ -56,6 +56,7 @@ Prototype Notice
     Development Stage: This version of the PLAY plugin is a prototype. It is continually being tested and refined to better suit the needs of LimeSurvey users and to accommodate various survey scenarios.
 
 
+![introduction-image](https://github.com/GallonSchimmer/PLAY_Plugin-for-LimeSurvey-Audio-Yielding/assets/26065891/2a134ea7-6828-4b43-8fff-34bf19af3fa7)
 
 
 
