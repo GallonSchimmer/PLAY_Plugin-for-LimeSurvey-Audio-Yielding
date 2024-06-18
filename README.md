@@ -394,28 +394,40 @@ By adhering to these guidelines, you will ensure that your LimeSurvey setup is o
 
 The PLAY plugin for LimeSurvey incorporates a robust error handling system that utilizes the 'Help' attribute of questions to provide real-time feedback on potential setup errors. This functionality is crucial for administrators to identify and resolve issues before officially launching surveys. Here’s how the plugin uses the 'Help' attribute for error handling:
 
-
 ### Error Handling Using the Help Attribute
 
-- **Invalid Code Format:**
-  - **Error Message:** "Invalid code format: {$code}. Unable to extract AudioNumberValue and QuestionType."
-  - **Trigger Condition:** This error appears if the question name does not adhere to the required naming convention (`audQ[AudioNumber][QuestionType]`), indicating a failure to parse essential components like AudioNumberValue and QuestionType.
-  - **Resolution:** Administrators should revise the question code to match the expected format, ensuring that each component (prefix, audio number, and question type) is correctly specified.
+#### Invalid Code Format:
+- **Error Message:**
+  ```plaintext
+  "Invalid code format: {$code}. Unable to extract AudioNumberValue and QuestionType."
+  ```
+- **Trigger Condition:** This error appears if the question name does not adhere to the required naming convention (`audQ[AudioNumber][QuestionType]`), indicating a failure to parse essential components like AudioNumberValue and QuestionType.
+- **Resolution:** Administrators should revise the question code to match the expected format, ensuring that each component (prefix, audio number, and question type) is correctly specified.
 
-- **Unrecognized Subfolder Name:**
-  - **Error Message:** "No audio files found in subfolder: {$currentSubfolder} for session ID {$sessionId}. Please check the subfolder name and audio filenames."
-  - **Trigger Condition:** This message is displayed when the system does not find any audio files in the expected subfolder, possibly due to an incorrect subfolder name or an empty subfolder.
-  - **Resolution:** Verify that the subfolder exists, is correctly named (typically two digits like `00`, `01`, etc.), and contains the properly named audio files (`00.mp3`, `01.mp3`, etc.).
+#### Unrecognized Subfolder Name:
+- **Error Message:**
+  ```plaintext
+  "No audio files found in subfolder: {$currentSubfolder} for session ID {$sessionId}. Please check the subfolder name and audio filenames."
+  ```
+- **Trigger Condition:** This message is displayed when the system does not find any audio files in the expected subfolder, possibly due to an incorrect subfolder name or an empty subfolder.
+- **Resolution:** Verify that the subfolder exists, is correctly named (typically two digits like `00`, `01`, etc.), and contains the properly named audio files (`00.mp3`, `01.mp3`, etc.).
 
-- **Unrecognized Question Type:**
-  - **Error Message:** "Invalid code format: {$code}. Unable to extract AudioNumberValue and QuestionType."
-  - **Trigger Condition:** Similar to the invalid code format, this error can also indicate that the question type specified in the code is not supported by the plugin.
-  - **Resolution:** Ensure that the question type is one of the recognized types (`K`, `X`, `F`, `S`, `M`, `L`) that the plugin can handle. Adjust the question code accordingly.
+#### Unrecognized Question Type:
+- **Error Message:**
+  ```plaintext
+  "Invalid code format: {$code}. Unable to extract AudioNumberValue and QuestionType."
+  ```
+- **Trigger Condition:** Similar to the invalid code format, this error can also indicate that the question type specified in the code is not supported by the plugin.
+- **Resolution:** Ensure that the question type is one of the recognized types (`K`, `X`, `F`, `S`, `M`, `L`) that the plugin can handle. Adjust the question code accordingly.
 
-- **Incorrectly Named Audio File:**
-  - **Error Message:** "No audio file matching AudioNumberValue: {$audioNumberValue} found. Check the subfolder and filenames."
-  - **Trigger Condition:** This error occurs when no audio file in the subfolder matches the AudioNumberValue specified in the question code.
-  - **Resolution:** Check that audio files within the subfolder are named following the sequence outlined in the question code. Correct any discrepancies between the audio file names and the AudioNumberValue.
+#### Incorrectly Named Audio File:
+- **Error Message:**
+  ```plaintext
+  "No audio file matching AudioNumberValue: {$audioNumberValue} found. Check the subfolder and filenames."
+  ```
+- **Trigger Condition:** This error occurs when no audio file in the subfolder matches the AudioNumberValue specified in the question code.
+- **Resolution:** Check that audio files within the subfolder are named following the sequence outlined in the question code. Correct any discrepancies between the audio file names and the AudioNumberValue.
+
 
 ### Practical Application for Survey Administrators
 
