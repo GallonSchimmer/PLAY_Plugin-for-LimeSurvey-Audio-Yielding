@@ -404,7 +404,7 @@ This organization of audio files and subfolders is critical for the plugin's fun
 To effectively organize audio files for use with the PLAY plugin in LimeSurvey, following a structured approach to the storage and naming of audio files is essential. This organization facilitates the plugin’s Round Robin system for managing audio playback throughout the survey. Here's a detailed explanation of how to set up your audio files and directories:
 
 1. **Top-Level Audio Storage:**
-   - Store all audio files intended for plugin use under the `/upload/surveys/{$surveyId}/files/` directory of your LimeSurvey installation.
+   - Store all audio files not intended for plugin use under the `/upload/surveys/{$surveyId}/files/` directory of your LimeSurvey installation.
 
 2. **Sample Audios:**
    - Place any sample audios, which are not to be handled by the plugin, directly under the `/upload/surveys/{$surveyId}/files/` directory.
@@ -420,11 +420,7 @@ To effectively organize audio files for use with the PLAY plugin in LimeSurvey, 
    - Within each subfolder, name your audio files sequentially starting from `00.mp3`, `01.mp3`, `02.mp3`, etc.
    - This naming convention is crucial for the plugin’s Round Robin mechanism, ensuring each audio file is uniquely identified and systematically utilized.
 
-5. **Round Robin Handling:**
-   - The PLAY plugin will cycle through these subfolders, using one audio file from a subfolder per survey session in a cyclical manner.
-   - This method ensures that all audio files are used evenly across different survey sessions, maintaining a balanced use of resources.
-
-6. **Setup Example for a Survey:**
+5. **Setup Example for a Survey:**
    - Suppose you have a survey with several questions where each requires an audio prompt. Here’s how you might set it up:
      - For introductory remarks or sample questions, use audios placed directly under `/upload/surveys/{$surveyId}/files/` like `SampleAudio.mp3`.
      - For the main survey questions, organize audios within subfolders named `00`, `01`, `02`, etc., at `/upload/surveys/{$surveyId}/files/00/00.mp3`, `/upload/surveys/{$surveyId}/files/01/01.mp3`, and so on.
