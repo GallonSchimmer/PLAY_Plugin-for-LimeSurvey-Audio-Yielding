@@ -11,6 +11,7 @@
 - [Using `info.php` to Determine Paths](#using-infophp-to-determine-paths)
 - [SQL Commands to Create Required Tables](#sql-commands-to-create-required-tables)
 - [JSON Information Upload in Survey Response](#json-information-upload-in-survey-response)
+- [Understanding Placeholders in the Last Question Script](#understanding-placeholders-in-the-last-question-script)
 - [Script for the Last Question in Survey](#script-for-the-last-question-in-survey)
 - [Round Robin Management](#round-robin-management)
 - [Audio File Organization for PLAY Plugin](#audio-file-organization-for-play-plugin)
@@ -247,9 +248,15 @@ In the PLAY plugin for LimeSurvey, JSON (JavaScript Object Notation) plays a cru
   - `SubfolderTimesUsed`: An array that increments each time a subfolder is accessed, ensuring each audio file's equitable use.
   - `index` and `quantity`: These values store the current subfolder index and the total number of subfolders, respectively.
 
+
+
+
+
+
+# Understanding Placeholders in the Last Question Script
+
 When configuring and setting up the PLAY plugin or similar tools within LimeSurvey, certain paths and identifiers need to be adjusted according to your specific LimeSurvey installation and survey structure. Here’s how to adapt placeholders and use real identifiers from your LimeSurvey installation:
 
-### Understanding Placeholders in LimeSurvey
 
 #### 1. **LimeSurvey Installation Directory:**
    The `/limesurvey5` in the path is a placeholder for the directory where LimeSurvey is installed on your server. During installation, LimeSurvey allows you to choose a directory name that suits your organizational needs. This name could vary (e.g., `/limesurvey`, `/survey`, etc.), so replace `/limesurvey5` with the actual directory name used during your LimeSurvey setup:
