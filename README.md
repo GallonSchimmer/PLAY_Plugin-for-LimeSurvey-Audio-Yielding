@@ -240,7 +240,7 @@ Assuming your LimeSurvey installation directory is `/surveys`, your Survey ID is
   <input type="text" id="answer100001X10X100SQ001" ... />
   ```
 
-### Conclusion
+
 
 Whenever you configure paths and identifiers in LimeSurvey, it’s critical to use the actual values that correspond to your specific installation and survey setup. This ensures that scripts, plugins, and HTML elements function correctly and interact as expected within the LimeSurvey environment. Always check your LimeSurvey administration panel or directly within the database to obtain accurate identifiers for surveys, groups, and questions.
 
