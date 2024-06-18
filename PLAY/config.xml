@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <metadata>
+        <name>PLAY</name>
+        <type>plugin</type>
+        <creationDate>2023-11-11</creationDate>
+        <lastUpdate>2023-11-11</lastUpdate>
+        <author>Alejandro Gallón</author>
+        <authorUrl>www.schimmercreative.com</authorUrl>
+        <authorEmail>alejandrogallon@gmail.com</authorEmail>
+        <version>1.0.0</version>
+        <license>GNU General Public License version 2 or later</license>
+        <description><![CDATA[Plugin for LimeSurvey Audio Yielding - Audioplayer, Scripts and Counter in Survey Resources for Question Types 'K', 'X', 'F', 'S', 'M', 'L']]></description> 
+    </metadata>
+    <compatibility>
+        <version>5.0</version>
+    </compatibility>
+    <!-- Additional configuration if needed -->
+</config>
