@@ -5,16 +5,16 @@
 # Index of README for PLAY Plugin for LimeSurvey
 
 - [Introduction](#introduction)
-- [Key Technologies](#key-technologies)
-- [Core Functionalities](#core-functionalities)
-- [Prototype Notice](#prototype-notice)
-- [Configuration of the PLAY Plugin for LimeSurvey](#configuration-of-the-play-plugin-for-limesurvey)
+- [Configuration of the Paths for the Plugin](#configuration-of-the-paths-for-the-plugin)
   - [Database Connection and Paths](#database-connection-and-paths)
   - [Configuration in `config.php` for Logging and Debugging](#configuration-in-configphp-for-logging-and-debugging)
 - [Using `info.php` to Determine Paths](#using-infophp-to-determine-paths)
 - [SQL Commands to Create Required Tables](#sql-commands-to-create-required-tables)
 - [JSON Information Upload in Survey Response](#json-information-upload-in-survey-response)
+- [Script for the Last Question in Survey](#script-for-the-last-question-in-survey)
+- [Round Robin Management](#round-robin-management)
 - [Audio File Organization for PLAY Plugin](#audio-file-organization-for-play-plugin)
+- [Structuring Your Survey](#structuring-your-survey)
 - [Error Handling Using the Help Attribute](#error-handling-using-the-help-attribute)
   - [Invalid Code Format](#invalid-code-format)
   - [Unrecognized Subfolder Name](#unrecognized-subfolder-name)
@@ -59,13 +59,9 @@ Prototype Notice
 
 
 
-# Configuration of the PLAY Plugin for LimeSurvey
+# Configuration of the Paths for the Plugin
 
 Here’s how you can configure the PLAY plugin's paths and settings for your LimeSurvey installation. This setup will ensure the plugin operates smoothly with your existing LimeSurvey system and adheres to best practices for security and performance.
-
-
-
-
 
 ## Database Connection and Paths
 - **Database Connection:** Configure the PHP Data Objects (PDO) to connect to your MySQL database. Set attributes to handle exceptions for robust error management.
@@ -89,6 +85,14 @@ Here’s how you can configure the PLAY plugin's paths and settings for your Lim
   ```php
   $baseDir = "/[path_to_web_directory]/audioSurvey/upload/surveys/{$surveyId}/files/";
   ```
+
+
+
+
+
+
+
+
 
 ## Configuration in `config.php` for Logging and Debugging
 
@@ -122,7 +126,16 @@ Here’s how you can configure the PLAY plugin's paths and settings for your Lim
 
 To accurately configure the `$baseDir` in your PLAY plugin for LimeSurvey, it's crucial to know the absolute paths on your server. This ensures that all file paths are correctly set up, enabling smooth operation and file access within the plugin. You can determine the necessary paths using a simple PHP script called `info.php`. Here's how you can utilize this script to find out the essential paths:
 
-### Step-by-Step Guide to Use `info.php` for Path Determination
+
+
+
+
+
+
+
+
+
+### Using `info.php` to Determine Paths
 
 1. **Create the `info.php` File:**
    - Open a text editor.
@@ -164,21 +177,18 @@ Using `info.php` allows you to quickly and accurately configure server paths for
 
 
 
-To extend the LimeSurvey database for use with the PLAY plugin, you need to create additional tables to manage audio uploads and track their usage within surveys. Below are the SQL commands to create these tables, which are essential for the plugin to operate effectively. These tables store information about audio files and their usage, and are accessible via prepared SQL statements in the plugin's PHP code.
 
-**Audio Uploads Table Integration with PLAY Plugin:**
 
-When the PLAY plugin is installed through the LimeSurvey Plugin Manager, it automatically begins monitoring and recording the URLs of all audio files located in the `/upload/surveys/{$surveyId}/files/[Subfolders]/` directory once a survey starts. It is crucial for the subfolders within the `/files` directory to be named sequentially as `00`, `01`, `02`, `03`, `04`, etc., to ensure the plugin can properly recognize and interact with them.
 
-Additionally, the audio files within each subfolder should also be named in a consecutive order such as `00.mp3`, `01.mp3`, `02.mp3`, `03.mp3`, `04.mp3`, etc. This systematic naming convention allows the plugin to automatically organize and manage the audio files effectively.
 
-This organization of audio files and subfolders is critical for the plugin's functionality, allowing it to seamlessly integrate audio into survey questions. A detailed explanation of how this organization aids the automatic processing and embedding of audio within LimeSurvey will be provided further in the documentation.
 
 
 
 
 
 ### SQL Commands to Create Required Tables
+
+To extend the LimeSurvey database for use with the PLAY plugin, you need to create additional tables to manage audio uploads and track their usage within surveys. Below are the SQL commands to create these tables, which are essential for the plugin to operate effectively. These tables store information about audio files and their usage, and are accessible via prepared SQL statements in the plugin's PHP code.
 
 1. **Table for Audio Uploads:**
    This table stores the URLs of audio files that have been uploaded in the Resources of the Survey. Each entry includes an automatically incrementing ID and the URL of the audio file.
@@ -201,6 +211,13 @@ This organization of audio files and subfolders is critical for the plugin's fun
        used_datetime DATETIME DEFAULT CURRENT_TIMESTAMP
    );
    ```
+
+
+
+
+
+
+
 
 ### JSON information upload in Survey Response
 
@@ -282,11 +299,17 @@ Assuming your LimeSurvey installation directory is `/surveys`, your Survey ID is
   <input type="text" id="answer100001X10X100SQ001" ... />
   ```
 
-
-
 Whenever you configure paths and identifiers in LimeSurvey, it’s critical to use the actual values that correspond to your specific installation and survey setup. This ensures that scripts, plugins, and HTML elements function correctly and interact as expected within the LimeSurvey environment. Always check your LimeSurvey administration panel or directly within the database to obtain accurate identifiers for surveys, groups, and questions.
 
-#### Integration with LimeSurvey:
+
+
+
+
+
+
+
+
+#### Script for the last Question in Survey
 
 To integrate the JSON data into LimeSurvey, you can utilize a Multiple Short Text question type at the end of the survey. This question will not only display the usage data but also act as a mechanism for updating the subfolder usage upon survey completion.
 
@@ -343,6 +366,12 @@ To integrate the JSON data into LimeSurvey, you can utilize a Multiple Short Tex
 </div>
 ```
 
+
+
+
+
+
+
 #### Round Robin Management:
 
 The PLAY plugin uses a Round Robin approach to cycle through audio file subfolders. This method ensures that every subfolder is used evenly across survey iterations. As the survey reaches its completion (`afterSurveyComplete()` event), the plugin updates the index for the next subfolder to be used in subsequent survey sessions.
@@ -354,15 +383,24 @@ Imagine a survey with 7 questions where each requires an audio player. You shoul
 This setup ensures that every survey session can pull audio files from a systematically managed queue within LimeSurvey.
 
 
+**Audio Uploads Table Integration with PLAY Plugin:**
+
+When the PLAY plugin is installed through the LimeSurvey Plugin Manager, it automatically begins monitoring and recording the URLs of all audio files located in the `/upload/surveys/{$surveyId}/files/[Subfolders]/` directory once a survey starts. It is crucial for the subfolders within the `/files` directory to be named sequentially as `00`, `01`, `02`, `03`, `04`, etc., to ensure the plugin can properly recognize and interact with them.
+
+Additionally, the audio files within each subfolder should also be named in a consecutive order such as `00.mp3`, `01.mp3`, `02.mp3`, `03.mp3`, `04.mp3`, etc. This systematic naming convention allows the plugin to automatically organize and manage the audio files effectively.
+
+This organization of audio files and subfolders is critical for the plugin's functionality, allowing it to seamlessly integrate audio into survey questions. A detailed explanation of how this organization aids the automatic processing and embedding of audio within LimeSurvey will be provided further in the documentation.
 
 
 
 
 
 
-To effectively organize audio files for use with the PLAY plugin in LimeSurvey, following a structured approach to the storage and naming of audio files is essential. This organization facilitates the plugin’s Round Robin system for managing audio playback throughout the survey. Here's a detailed explanation of how to set up your audio files and directories:
+
 
 ### Audio File Organization for PLAY Plugin
+
+To effectively organize audio files for use with the PLAY plugin in LimeSurvey, following a structured approach to the storage and naming of audio files is essential. This organization facilitates the plugin’s Round Robin system for managing audio playback throughout the survey. Here's a detailed explanation of how to set up your audio files and directories:
 
 1. **Top-Level Audio Storage:**
    - Store all audio files intended for plugin use under the `/upload/surveys/{$surveyId}/files/` directory of your LimeSurvey installation.
@@ -393,11 +431,15 @@ To effectively organize audio files for use with the PLAY plugin in LimeSurvey, 
  This setup is critical for maintaining the integrity and consistency of the audio elements within your surveys.
 
  
-To ensure that the PLAY plugin operates effectively within LimeSurvey, it is essential to follow a structured approach both in terms of survey design and in the implementation of the plugin. Here’s how to set up your survey and configure questions to integrate with the PLAY plugin effectively:
+
+
+
 
 
 
 ### Structuring Your Survey
+
+To ensure that the PLAY plugin operates effectively within LimeSurvey, it is essential to follow a structured approach both in terms of survey design and in the implementation of the plugin. Here’s how to set up your survey and configure questions to integrate with the PLAY plugin effectively:
 
 - **Introductory Group of Questions:**
   - Use the first group of questions in your survey for introductory purposes, such as welcome messages or sample audio that does not require plugin interaction.
@@ -439,9 +481,14 @@ To ensure that the PLAY plugin operates effectively within LimeSurvey, it is ess
 By adhering to these guidelines, you will ensure that your LimeSurvey setup is optimized for using the PLAY plugin, enhancing the functionality of your surveys with robust audio handling capabilities. This structured approach helps maintain clarity and functionality across diverse survey components, leveraging audio effectively to enhance respondent engagement and data integrity.
 
 
-The PLAY plugin for LimeSurvey incorporates a robust error handling system that utilizes the 'Help' attribute of questions to provide real-time feedback on potential setup errors. This functionality is crucial for administrators to identify and resolve issues before officially launching surveys. Here’s how the plugin uses the 'Help' attribute for error handling:
+
+
+
+
 
 ### Error Handling Using the Help Attribute
+
+The PLAY plugin for LimeSurvey incorporates a robust error handling system that utilizes the 'Help' attribute of questions to provide real-time feedback on potential setup errors. This functionality is crucial for administrators to identify and resolve issues before officially launching surveys. Here’s how the plugin uses the 'Help' attribute for error handling:
 
 #### Invalid Code Format:
 - **Error Message:**
