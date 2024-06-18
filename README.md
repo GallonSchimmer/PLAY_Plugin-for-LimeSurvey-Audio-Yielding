@@ -487,6 +487,7 @@ To ensure that the PLAY plugin operates effectively within LimeSurvey, it is ess
 By adhering to these guidelines, you will ensure that your LimeSurvey setup is optimized for using the PLAY plugin, enhancing the functionality of your surveys with robust audio handling capabilities. This structured approach helps maintain clarity and functionality across diverse survey components, leveraging audio effectively to enhance respondent engagement and data integrity.
 
 
+![structuring-your-survey-image](https://github.com/GallonSchimmer/PLAY_Plugin-for-LimeSurvey-Audio-Yielding/assets/26065891/41dffbeb-1636-43d4-b8ab-a6488e657263)
 
 
 
