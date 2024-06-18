@@ -1,7 +1,7 @@
 # PLAY_Plugin-for-LimeSurvey-Audio-Yielding
 
 
-```markdown
+
 # Index of README for PLAY Plugin for LimeSurvey
 
 - [Introduction](#introduction)
@@ -21,17 +21,17 @@
   - [Unrecognized Question Type](#unrecognized-question-type)
   - [Incorrectly Named Audio File](#incorrectly-named-audio-file)
 - [Practical Application for Survey Administrators](#practical-application-for-survey-administrators)
-```
 
 
 
 
 
-#Introduction
+
+Introduction
 
 The PLAY plugin for LimeSurvey enhances the audio capabilities within surveys by integrating advanced audio management and playback functionalities. This plugin is designed to seamlessly embed an audio player into a survey question. As a prototype, PLAY uses methods for handling audio files, ensuring a dynamic experience.
 
-#Key Technologies
+Key Technologies
 
     MySQL: Utilizes a relational database to manage audio files and track their usage within surveys.
     PHP: Drives the server-side logic, interfacing with LimeSurvey and the MySQL database.
