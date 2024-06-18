@@ -436,6 +436,7 @@ To effectively organize audio files for use with the PLAY plugin in LimeSurvey, 
  This setup is critical for maintaining the integrity and consistency of the audio elements within your surveys.
 
  
+![audio-file-organization-image](https://github.com/GallonSchimmer/PLAY_Plugin-for-LimeSurvey-Audio-Yielding/assets/26065891/da86c4a1-b5a2-47b9-bcc5-73b7f7aeeb6a)
 
 
 
