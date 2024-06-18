@@ -12,6 +12,7 @@
   - [Database Connection and Paths](#database-connection-and-paths)
   - [Configuration in `config.php` for Logging and Debugging](#configuration-in-configphp-for-logging-and-debugging)
 - [Using `info.php` to Determine Paths](#using-infophp-to-determine-paths)
+- [SQL Commands to Create Required Tables](#sql-commands-to-create-required-tables)
 - [Creating Database Tables for PLAY Plugin](#creating-database-tables-for-play-plugin)
 - [Organizing Audio Files for Round Robin Distribution](#organizing-audio-files-for-round-robin-distribution)
 - [Survey Structure and Question Validation](#survey-structure-and-question-validation)
@@ -55,9 +56,17 @@ Prototype Notice
 
 
 
+
+
+
+
 # Configuration of the PLAY Plugin for LimeSurvey
 
 Here’s how you can configure the PLAY plugin's paths and settings for your LimeSurvey installation. This setup will ensure the plugin operates smoothly with your existing LimeSurvey system and adheres to best practices for security and performance.
+
+
+
+
 
 ## Database Connection and Paths
 - **Database Connection:** Configure the PHP Data Objects (PDO) to connect to your MySQL database. Set attributes to handle exceptions for robust error management.
@@ -153,6 +162,9 @@ Using `info.php` allows you to quickly and accurately configure server paths for
 
 
 
+
+
+
 To extend the LimeSurvey database for use with the PLAY plugin, you need to create additional tables to manage audio uploads and track their usage within surveys. Below are the SQL commands to create these tables, which are essential for the plugin to operate effectively. These tables store information about audio files and their usage, and are accessible via prepared SQL statements in the plugin's PHP code.
 
 **Audio Uploads Table Integration with PLAY Plugin:**
@@ -162,6 +174,10 @@ When the PLAY plugin is installed through the LimeSurvey Plugin Manager, it auto
 Additionally, the audio files within each subfolder should also be named in a consecutive order such as `00.mp3`, `01.mp3`, `02.mp3`, `03.mp3`, `04.mp3`, etc. This systematic naming convention allows the plugin to automatically organize and manage the audio files effectively.
 
 This organization of audio files and subfolders is critical for the plugin's functionality, allowing it to seamlessly integrate audio into survey questions. A detailed explanation of how this organization aids the automatic processing and embedding of audio within LimeSurvey will be provided further in the documentation.
+
+
+
+
 
 ### SQL Commands to Create Required Tables
 
