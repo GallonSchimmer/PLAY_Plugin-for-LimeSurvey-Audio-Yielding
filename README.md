@@ -1,8 +1,8 @@
 # PLAY_Plugin-for-LimeSurvey-Audio-Yielding
 
+## Plugin for LimeSurvey Audio Yielding - Audioplayer, Scripts and Counter in Survey Resources for Question Types 'K', 'X', 'F', 'S', 'M', 'L'
 
-
-# Index of README for PLAY Plugin for LimeSurvey
+# Index  
 
 - [Introduction](#introduction)
 - [Configuration of the Paths for the Plugin](#configuration-of-the-paths-for-the-plugin)
