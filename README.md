@@ -1,6 +1,13 @@
 # PLAY_Plugin-for-LimeSurvey-Audio-Yielding
 
-#### Plugin for LimeSurvey Audio Yielding - Audioplayer, Scripts and Counter in Survey Resources for Question Types 'K', 'X', 'F', 'S', 'M', 'L'
+Audioplayer embedding 
+Script for automatic hiding Subquestions  
+Counter for statistical purposes in Survey Resources 
+For Question Types 'K', 'X', 'F', 'S', 'M', 'L'
+Round Robin System for Subfolders and Audios
+Name Validation and Error report
+Logs and Debugging configuration
+
 
 # Index  
 
