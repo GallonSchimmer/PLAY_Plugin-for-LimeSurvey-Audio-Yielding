@@ -1,12 +1,14 @@
 # PLAY_Plugin-for-LimeSurvey-Audio-Yielding
 
-#### Audioplayer embedding 
-#### Script for automatic hiding Subquestions  
-#### Counter for statistical purposes in Survey Resources 
-#### For Question Types 'K', 'X', 'F', 'S', 'M', 'L'
-#### Round Robin System for Subfolders and Audios
-#### Name Validation and Error report
-#### Logs and Debugging configuration
+Features
+
+    Audioplayer Embedding
+    Script for automatic hiding and showing Subquestions
+    Counter for statistical purposes in Survey Resources
+    For Question Types 'k', 'x', 'f', 's', 'M', 'l'
+    Round Robin System for Subfolders and Audios
+    Name Validation and Error report
+    Logs and Debbuging configuration
 
 
 # Index  
