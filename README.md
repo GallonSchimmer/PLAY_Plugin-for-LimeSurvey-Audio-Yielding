@@ -117,7 +117,8 @@ Here’s how you can configure the PLAY plugin's paths and settings for your Lim
               [
                   'class' => 'CFileLogRoute',
                   'levels' => 'error, warning, info',
-                  'logFile' => 'application.log', //the file will be located under [path_to_limesurvey]/ 
+                  'logPath' => 'C:/xampp/htdocs/limesurvey5/', // Absolute path to the log directory, you can find it with the info.php as DOCUMENT_ROOT
+                  'logFile' => 'application.log', //the file will be located under [limeSurvey installation Directory]/ 
               ],
               // Additional log routes can be added here
           ],
